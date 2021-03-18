@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
     <section>
-{{--        <img src="{{asset('/images/slider.jpg')}}" width="100%" style="object-fit: cover; height: 45vh">--}}
+        {{--        <img src="{{asset('/images/slider.jpg')}}" width="100%" style="object-fit: cover; height: 45vh">--}}
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="3500">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -31,13 +31,15 @@
                     <h3><b>Nejnovější epizody</b></h3>
                 </div>
                 <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-                    <div class="item">
-                        <span class="time-badge">21:48</span>
-                        <span class="new-badge">Nové</span>
-                        <img src="{{asset('/images/epizoda.png')}}" width="100%" class="border-rounded">
-                        <h5 class="mt-3 mb-1"><b>Název videa</b></h5>
-                    </div>
-                    <p class="small">Název pořadu <span class="float-right">dd/mm/rr</span></p>
+                    <a href="/epizoda">
+                        <div class="item">
+                            <span class="time-badge">21:48</span>
+                            <span class="new-badge">Nové</span>
+                            <img src="{{asset('/images/epizoda.png')}}" width="100%" class="border-rounded">
+                            <h5 class="mt-3 mb-1"><b>Název videa</b></h5>
+                        </div>
+                        <p class="small">Název pořadu <span class="float-right">dd/mm/rr</span></p>
+                    </a>
                 </div>
                 <div class="col-lg-2 col-md-4 col-sm-6 col-12">
                     <div class="item">

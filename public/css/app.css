@@ -10171,3 +10171,15 @@ body {
 #footer a {
   line-height: 1.8rem;
 }
+
+.description {
+  font-size: 0.7rem;
+}
+
+a {
+  color: black;
+}
+a:hover {
+  color: black;
+  text-decoration: none;
+}

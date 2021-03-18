@@ -25,6 +25,10 @@ Route::get('/porad', function () {
     return view('show');
 });
 
+Route::get('/epizoda', function () {
+    return view('episode');
+});
+
 
 Admin::routes(['register' => false]);
 
