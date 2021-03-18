@@ -3,20 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\Show;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ShowController extends Controller
 {
     public function index()
     {
-        return view('show.index', [
+        return view('admin.show.index', [
             'shows' => Show::all(),
         ]);
     }
 
     public function create()
     {
-        return view('create');
+        return view('admin.show.create');
     }
 
     public function store(Request $request)
@@ -25,6 +26,20 @@ class ShowController extends Controller
         $show->name = $request['name'];
         $show->save();
 
+        return redirect()->route('admin.shows.show', $show);
+    }
+
+    public function show(Show $show)
+    {
+        $scheduled_episodes = $show->episodes()->where('released_at', '<', Carbon::now())->get();
+        $released_episodes = $show->episodes()->where('released_at', '>=', Carbon::now())->get();
+
+        return view('admin.show.show', [
+            'show' => $show,
+            'scheduled_episodes' => $scheduled_episodes,
+            'released_episodes' => $released_episodes,
+
+        ]);
     }
 
     public function edit()

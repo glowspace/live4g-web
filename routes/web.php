@@ -32,7 +32,12 @@ Route::get('/epizoda', function () {
 
 Admin::routes(['register' => false]);
 
-Route::middleware(Authenticate::class)->group(function () {
-    Route::resource('/admin/shows', ShowController::class);
-    Route::resource('/admin/episodes', EpisodeController::class);
+Route::group([
+    'prefix' => 'admin',
+    'middleware' => [Authenticate::class],
+    'as' => 'admin.',
+], function () {
+
+    Route::resource('/shows', ShowController::class);
+    Route::resource('/episodes', EpisodeController::class);
 });

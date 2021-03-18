@@ -1,38 +1,62 @@
-@extends('admin.layout')
+@extends('admin::layout')
 @section('content')
-    <h3>Přidání epizody</h3>
+    <h3>Přidání epizody pořadu {{$show->name}}</h3>
 
-    <a href="{{route('admin.episodes.index')}}"
-       class="btn btn-secondary mb-2">Vrátit se bez uložení</a>
+
 
     <form method="POST"
           action="{{route('admin.episodes.store')}}">
         @csrf
 
-        <div class="form-group">
-            <label>Název epizody</label>
-            <input class="form-control" required
-                   name="name">
+        <div class="card">
+            <div class="card-header">1. Základní info</div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label>Název epizody</label>
+                    <input class="form-control" required
+                           name="name">
+                </div>
+
+                <div class="form-group">
+                    <p>Jedná se o živý přenos <input name="is_livestream" type="checkbox"></p>
+                </div>
+            </div>
         </div>
 
-        <div class="form-group">
-            <label>Číslo epizody</label>
-            <input name="number" class="form-control" type="number" required>
-            <small>podle něj se skládá pořadí</small>
+        <div class="card">
+            <div class="card-header">2. Video zdroj</div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label>Odkaz na YouTube video</label>
+                    <input name="url" required type="url" class="form-control">
+                    <small>Odkaz musí být ve formátu: https://www.youtube.com/watch?v=OF3Q8WNna8E. <br>Video na YT už by
+                        mělo mít nastavenou rozumnou miniaturu.</small>
+                </div>
+
+                <div class="form-group">
+                    <label>Délka videa</label>
+                    <input name="url" required type="text" placeholder="0:00" class="form-control">
+                    <small>Délka ve tvaru 0:17 (h:mm). U streamu uvádějte odhadovanou délku streamu.</small>
+                </div>
+            </div>
         </div>
 
-        <div class="form-group">
-            <label>Odkaz videa na YouTube</label>
-            <input name="url" required type="url" class="form-control">
-        </div>
-
-        <div class="form-group">
-            <label>Popis u videa</label>
-            <input name="description" required type="text" class="form-control">
+        <div class="card">
+            <div class="card-header">3. Další detaily</div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label>Popisek u videa</label>
+                    <textarea name="description" class="form-control" required></textarea>
+                    <small>Max. 3 řádky.</small>
+                </div>
+            </div>
         </div>
 
         <input type="submit"
-               class="btn btn btn-success">
+               class="btn btn btn-success" value="Přidat epizodu">
+
+        <a href="{{route('admin.shows.show', $show)}}"
+           class="btn btn-secondary">Storno</a>
     </form>
 
 @endsection
