@@ -17,7 +17,7 @@
                 <a class="nav-link" href="/">Kategorie</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/">Pořady</a>
+                <a class="nav-link" href="/porad">Pořady</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/">Živé vysílání</a>

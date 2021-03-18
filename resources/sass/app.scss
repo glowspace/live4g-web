@@ -22,7 +22,7 @@ body {
     font-weight: 700;
     margin: auto 10px;
 
-    color: white !important;
+    color: white;
     border-bottom: 3px solid transparent;
 
     &:hover {
@@ -30,6 +30,44 @@ body {
     }
 }
 
+.navbar-dark{
+    .nav-link{
+        color: white !important;
+    }
+}
+
 .bg-black {
     background-color: black !important;
+    color: white;
+}
+
+.text-orange {
+    color: #FAA53F;
+}
+
+.bg-orange {
+    background-color: #FAA53F;
+}
+
+.more {
+    font-size: 1rem;
+}
+
+//Show
+.carousel-caption {
+    bottom: 50%;
+    padding-bottom: 0px;
+    text-align: left;
+    right: 3rem !important;
+    left: 3rem !important;
+    width: 55%;
+
+    h1 {
+        color: white;
+        font-style: normal;
+        font-size: 3rem;
+        //text-transform: uppercase;
+        //padding-top: 16%;
+        line-height: 2em;
+    }
 }

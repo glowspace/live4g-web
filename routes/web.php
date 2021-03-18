@@ -18,5 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/porad', function () {
+    return view('show');
+});
+
 
 Admin::routes(['register' => false]);
