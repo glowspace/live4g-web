@@ -23,6 +23,16 @@
                 <a class="nav-link" href="/">Živé vysílání</a>
             </li>
         </ul>
+        <form action="">
+            <div class="p-1 bg-light rounded rounded-pill shadow-sm my-auto">
+                <div class="input-group">
+                    <input type="search" placeholder="Vyhledat..."class="form-control border-0 bg-transparent">
+                    <div class="input-group-append">
+                        <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
 
 </nav>
