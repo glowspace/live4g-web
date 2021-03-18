@@ -31,8 +31,8 @@ class ShowController extends Controller
 
     public function show(Show $show)
     {
-        $scheduled_episodes = $show->episodes()->where('released_at', '<', Carbon::now())->get();
-        $released_episodes = $show->episodes()->where('released_at', '>=', Carbon::now())->get();
+        $scheduled_episodes = $show->episodes()->where('released_at', '>', Carbon::now())->get();
+        $released_episodes = $show->episodes()->where('released_at', '<=', Carbon::now())->get();
 
         return view('admin.show.show', [
             'show' => $show,

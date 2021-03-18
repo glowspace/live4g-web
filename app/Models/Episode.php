@@ -9,6 +9,8 @@ class Episode extends Model
 {
     use HasFactory;
 
+    protected $dates = ['released_at'];
+
     public function show()
     {
         return $this->belongsTo(Show::class);

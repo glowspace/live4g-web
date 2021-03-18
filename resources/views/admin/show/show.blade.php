@@ -17,7 +17,7 @@
         @foreach($scheduled_episodes as $scheduled_episode)
             <tr>
                 <td>
-                    <a>{{$scheduled_episode->name}}</a>
+                    <a href="">{{$scheduled_episode->name}}</a>
                 </td>
                 <td>{{$scheduled_episode->released_at->format('d.m.Y h:i')}}</td>
             </tr>

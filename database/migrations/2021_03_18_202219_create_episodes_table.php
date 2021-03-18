@@ -19,7 +19,6 @@ class CreateEpisodesTable extends Migration
             $table->unsignedInteger('show_id');
             $table->text('description')->nullable();
             $table->unsignedInteger('duration_seconds')->nullable();
-            $table->unsignedInteger('number');
 
             $table->boolean('is_livestream');
             $table->text('youtube_url');
