@@ -10004,7 +10004,7 @@ h3 {
 }
 body {
   background-color: white;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Bahnschrift";
 }
 
 .border-rounded {
@@ -10042,6 +10042,7 @@ body {
 
 .more {
   font-size: 1rem;
+  color: #FAA53F !important;
 }
 
 .carousel-caption {

@@ -43,8 +43,8 @@
             <div class="row">
                 <div class="col-12 mb-3">
                     <h3 class="d-inline-block"><b>Hřešíme s Kubou</b></h3>
-                    <span class="d-inline-block text-orange text-uppercase more font-weight-bold float-right">Ukázat vše <i
-                            class="fas fa-chevron-right"></i></span>
+                    <a href="/porad" class="d-inline-block text-uppercase more font-weight-bold float-right">Ukázat vše <i
+                            class="fas fa-chevron-right"></i></a>
                 </div>
                 <div class="col-lg-2 col-md-4 col-sm-6 col-12">
                     <img src="{{asset('/images/epizoda.png')}}" width="100%" class="border-rounded">

@@ -9,7 +9,8 @@
 
 body {
     background-color: white;
-    font-family: 'Open Sans', sans-serif;
+    //font-family: 'Open Sans', sans-serif;
+    font-family: 'Bahnschrift';
 }
 
 .border-rounded {
@@ -51,6 +52,7 @@ body {
 
 .more {
     font-size: 1rem;
+    color: #FAA53F!important;
 }
 
 //Show
@@ -71,6 +73,7 @@ body {
         line-height: 2em;
     }
 }
+
 //
 //.form-control {
 //    background-color: $dark;
