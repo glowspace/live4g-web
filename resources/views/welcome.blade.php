@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
     <section>
-        <img src="{{asset('/images/slider.jpg')}}" width="100%" style="object-fit: cover; height: 55vh">
+        <img src="{{asset('/images/slider.jpg')}}" width="100%" style="object-fit: cover; height: 45vh">
     </section>
     <section>
         <div class="container-fluid px-lg-5">

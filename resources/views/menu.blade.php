@@ -1,4 +1,8 @@
 {{--Menu--}}
+<nav class="navbar navbar-expand-lg navbar-light bg-white text-center px-5 shadow">
+    <p class="mb-0 mx-auto">Líbí se vám myšlenka projektu Live 4G? <a href="" class="btn-link">Podpořte nás!</a></p>
+</nav>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-black px-5 shadow">
     <a class="navbar-brand" href="/"><img src="{{asset('/images/live4g-white.png')}}" height="50px"></a>
     <button class="navbar-toggler"
@@ -26,9 +30,10 @@
         <form action="">
             <div class="p-1 bg-light rounded rounded-pill shadow-sm my-auto">
                 <div class="input-group">
-                    <input type="search" placeholder="Vyhledat..."class="form-control border-0 bg-transparent">
+                    <input type="search" placeholder="Vyhledat..." class="form-control border-0 bg-transparent">
                     <div class="input-group-append">
-                        <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+                        <button id="button-addon1" type="submit" class="btn btn-link text-primary">
+                            <i class="fa fa-search"></i></button>
                     </div>
                 </div>
             </div>
