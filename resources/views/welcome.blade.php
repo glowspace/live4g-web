@@ -30,21 +30,31 @@
                 <div class="col-12 mb-3">
                     <h3><b>Nejnovější epizody</b></h3>
                 </div>
-                <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-                    <a href="/epizoda">
-                        <div class="item">
-                            <span class="time-badge">21:48</span>
-                            <span class="new-badge">Nové</span>
-                            <img src="{{asset('/images/epizoda.png')}}" width="100%" class="border-rounded">
-                            <h5 class="mt-3 mb-1"><b>Název videa</b></h5>
-                        </div>
-                        <p class="small">Název pořadu <span class="float-right">dd/mm/rr</span></p>
-                    </a>
-                </div>
+
+                @foreach($last_episodes as $e)
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+                        <a href="/epizoda">
+                            <div class="item">
+                                <span class="time-badge">{{$e->getDuration()}}</span>
+                                @if($e->isLive())
+                                    <span class="live-badge"><i
+                                            class="fas fa-circle text-danger blinking"></i> Živě</span>
+                                @elseif($e->isNew())
+                                    <span class="new-badge">Nové</span>
+                                @endif
+
+                                <img src="{{$e->getPreviewURL()}}" width="100%" class="border-rounded">
+                                <h5 class="mt-3 mb-1"><b>{{$e->name}}</b></h5>
+                            </div>
+                            <p class="small">{{$e->show->name}} <span
+                                    class="float-right">{{$e->released_at->format('d/m/Y')}}</span></p>
+                        </a>
+                    </div>
+                @endforeach
                 <div class="col-lg-2 col-md-4 col-sm-6 col-12">
                     <div class="item">
                         <span class="time-badge">8:15</span>
-                        <span class="live-badge"><i class="fas fa-circle text-danger blinking"></i> Živě</span>
+
                         <img src="{{asset('/images/epizoda.png')}}" width="100%" class="border-rounded">
                         <h5 class="mt-3 mb-1"><b>Název videa</b></h5>
                     </div>
@@ -83,6 +93,7 @@
                     <p class="small">Název pořadu <span class="float-right">dd/mm/rr</span></p>
                 </div>
             </div>
+
             <div class="row my-5">
                 <div class="col-12 mb-3">
                     <h3 class="d-inline-block"><b>Hřešíme s Kubou</b></h3>

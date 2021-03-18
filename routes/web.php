@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EpisodeController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ShowController;
 use Illuminate\Support\Facades\Route;
 use MichaelDojcar\LaravelAdmin\Facades\Admin;
@@ -17,9 +18,7 @@ use MichaelDojcar\LaravelAdmin\Http\Middleware\Authenticate;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'home']);
 
 Route::get('/porad', function () {
     return view('show');
