@@ -1,0 +1,31 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+body {
+    background-color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.border-rounded {
+    border-radius: 7px;
+}
+
+.nav-link{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin: auto 10px;
+
+    color: white !important;
+border-bottom: 3px solid transparent;
+
+    &:hover{
+       border-bottom: 3px solid red;
+    }
+}
