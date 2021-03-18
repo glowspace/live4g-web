@@ -13,7 +13,7 @@
                             <label for="email" class="col-md-4 control-label">Jméno</label>
 
                             <div class="col-md-6">
-                                <input id="email"class="form-control" name="email"
+                                <input id="email" class="form-control" name="email"
                                        value="{{ old('email') }}" required autofocus>
 
                                 @if ($errors->has('email'))
