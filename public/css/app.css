@@ -10164,3 +10164,10 @@ body {
   color: #ffd026 !important;
   border-color: transparent !important;
 }
+
+#footer {
+  text-transform: uppercase;
+}
+#footer a {
+  line-height: 1.8rem;
+}
