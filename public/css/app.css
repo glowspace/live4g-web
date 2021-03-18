@@ -10101,3 +10101,51 @@ body {
   padding: 5px 10px 2px !important;
   font-size: 10px;
 }
+
+.live-badge {
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  background: rgba(0, 0, 0, 0.7);
+  letter-spacing: 1px;
+  text-align: center;
+  border-radius: 30px 30px 30px 30px;
+  color: white;
+  padding: 5px 10px 2px !important;
+  font-size: 10px;
+}
+
+.blinking {
+  -webkit-animation: blinkingText 1.2s linear infinite;
+          animation: blinkingText 1.2s linear infinite;
+}
+
+@-webkit-keyframes blinkingText {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blinkingText {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
