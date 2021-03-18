@@ -1,13 +1,13 @@
 @extends('layout')
 @section('content')
     <section>
-        <img src="{{asset('/images/slider.jpg')}}" width="100%" style="object-fit: cover; height: 55vh">
+        <img src="{{asset('/images/slider.jpg')}}" width="100%" style="object-fit: cover; height: 55vh; filter: brightness(0.7)">
         <div class="container-fluid px-5">
             <div class="carousel-caption vertical-center">
-                <h1><b>Název pořadu</b></h1>
-                <h4>Popis pořadu: Za časů dávných bohů, hrdinných náčelníků a králů, neklidem zmítaná země zrodila
-                    hrdinu. Byl jím Mikýř, mocná princezna, zocelená žárem bitev. Síla... vášeň... nebezpečí. Jeho
-                    odvaha změní svět.</h4>
+                <h1><b>Hřešíme s Kubou</b></h1>
+                <h4>Řešíš, zda hřešíš? To je dobře a věz, že v tom nejsi sám! Kuba ti pomůže zorientovat se v situacích
+                    všedního dne a nabídne ti pohled na věc optikou katolického teenagera. Nemusíš se bát suchého
+                    výkladu, příkazů a zákazů. O zábavu nebude nouze, i když bude řeč o hříchu.</h4>
             </div>
         </div>
     </section>
@@ -94,16 +94,16 @@
             </div>
         </div>
     </section>
-{{--    <section class="bg-black py-5">--}}
-{{--        <div class="container-fluid px-lg-5">--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-12 mb-3">--}}
-{{--                    <h3><b>Mohlo by se vám také líbit</b></h3>--}}
-{{--                </div>--}}
-{{--                <div class="col-3">--}}
-{{--                    <img>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </section>--}}
+    {{--    <section class="bg-black py-5">--}}
+    {{--        <div class="container-fluid px-lg-5">--}}
+    {{--            <div class="row">--}}
+    {{--                <div class="col-12 mb-3">--}}
+    {{--                    <h3><b>Mohlo by se vám také líbit</b></h3>--}}
+    {{--                </div>--}}
+    {{--                <div class="col-3">--}}
+    {{--                    <img>--}}
+    {{--                </div>--}}
+    {{--            </div>--}}
+    {{--        </div>--}}
+    {{--    </section>--}}
 @endsection

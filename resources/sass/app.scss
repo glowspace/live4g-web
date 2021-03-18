@@ -57,7 +57,7 @@ body {
 
 //Show
 .carousel-caption {
-    bottom: 50%;
+    bottom: 35%;
     padding-bottom: 0px;
     text-align: left;
     right: 3rem !important;
@@ -153,4 +153,8 @@ body {
     100% {
         opacity: 1;
     }
+}
+
+.carousel-control-prev, .carousel-control-next{
+    width: 5% !important;
 }
