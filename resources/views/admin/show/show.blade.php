@@ -1,14 +1,15 @@
 @extends('admin::layout')
 @section('content')
-    <h3>Pořad {{$show->name}}</h3>
 
-    <a class="btn btn-secondary btn-sm">Upravit pořad</a>
+    <h3 class="d-inline-block">Pořad {{$show->name}}</h3>
+
+    <a class="btn btn-secondary btn-sm float-right">Upravit pořad</a>
 
     <hr>
 
     <h4 class=" d-inline-block">Plánované epizody <small>({{$scheduled_episodes->count()}})</small></h4>
 
-    <a class="btn btn-success mb-2 ml-3 btn-sm" href="{{route('admin.episodes.create', ['show_id'=> $show->id])}}">
+    <a class="btn btn-success mb-2 ml-3 btn-sm float-right" href="{{route('admin.episodes.create', ['show_id'=> $show->id])}}">
         + Vytvořit novou epizodu</a>
 
     <table class="table table-bordered">

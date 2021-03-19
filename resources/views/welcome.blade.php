@@ -32,181 +32,39 @@
                 </div>
 
                 @foreach($last_episodes as $e)
-                    <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-                        <a href="/epizoda">
-                            <div class="item">
-                                <span class="time-badge">{{$e->getDuration()}}</span>
-                                @if($e->isLive())
-                                    <span class="live-badge"><i
-                                            class="fas fa-circle text-danger blinking"></i> Živě</span>
-                                @elseif($e->isNew())
-                                    <span class="new-badge">Nové</span>
-                                @endif
-
-                                <img src="{{$e->getPreviewURL()}}" width="100%" class="border-rounded">
-                                <h5 class="mt-3 mb-1"><b>{{$e->name}}</b></h5>
-                            </div>
-                            <p class="small">{{$e->show->name}} <span
-                                    class="float-right">{{$e->released_at->format('d/m/Y')}}</span></p>
-                        </a>
-                    </div>
+                    @component('components.thumb', ['e' => $e])@endcomponent
                 @endforeach
-                <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-                    <div class="item">
-                        <span class="time-badge">8:15</span>
-
-                        <img src="{{asset('/images/epizoda.png')}}" width="100%" class="border-rounded">
-                        <h5 class="mt-3 mb-1"><b>Název videa</b></h5>
-                    </div>
-                    <p class="small">Název pořadu <span class="float-right">dd/mm/rr</span></p>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-                    <div class="item">
-                        <span class="time-badge">12:35</span>
-                        <img src="{{asset('/images/epizoda.png')}}" width="100%" class="border-rounded">
-                        <h5 class="mt-3 mb-1"><b>Název videa</b></h5>
-                    </div>
-                    <p class="small">Název pořadu <span class="float-right">dd/mm/rr</span></p>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-                    <div class="item">
-                        <span class="time-badge">21:01</span>
-                        <img src="{{asset('/images/epizoda.png')}}" width="100%" class="border-rounded">
-                        <h5 class="mt-3 mb-1"><b>Název videa</b></h5>
-                    </div>
-                    <p class="small">Název pořadu <span class="float-right">dd/mm/rr</span></p>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-                    <div class="item">
-                        <span class="time-badge">21:48</span>
-                        <img src="{{asset('/images/epizoda.png')}}" width="100%" class="border-rounded">
-                        <h5 class="mt-3 mb-1"><b>Název videa</b></h5>
-                    </div>
-                    <p class="small">Název pořadu <span class="float-right">dd/mm/rr</span></p>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-                    <div class="item">
-                        <span class="time-badge">21:48</span>
-                        <img src="{{asset('/images/epizoda.png')}}" width="100%" class="border-rounded">
-                        <h5 class="mt-3 mb-1"><b>Název videa</b></h5>
-                    </div>
-                    <p class="small">Název pořadu <span class="float-right">dd/mm/rr</span></p>
-                </div>
             </div>
 
             <div class="row my-5">
                 <div class="col-12 mb-3">
-                    <h3 class="d-inline-block"><b>Hřešíme s Kubou</b></h3>
-                    <a href="/porad" class="d-inline-block text-uppercase more font-weight-bold float-right">Ukázat vše
+                    <h3 class="d-inline-block"><b>{{$show_1->name}}</b></h3>
+                    <a href="{{$show_1->getPublicRoute()}}" class="d-inline-block text-uppercase more font-weight-bold float-right">Ukázat vše
                         <i
                             class="fas fa-chevron-right"></i></a>
                 </div>
-                <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-                    <div class="item">
-                        <span class="time-badge">21:48</span>
-                        <span class="new-badge">Nové</span>
-                        <img src="{{asset('/images/epizoda.png')}}" width="100%" class="border-rounded">
-                        <h5 class="mt-3 mb-1"><b>Název videa</b></h5>
-                    </div>
-                    <p class="small">Název pořadu <span class="float-right">dd/mm/rr</span></p>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-                    <div class="item">
-                        <span class="time-badge">8:15</span>
-                        <img src="{{asset('/images/epizoda.png')}}" width="100%" class="border-rounded">
-                        <h5 class="mt-3 mb-1"><b>Název videa</b></h5>
-                    </div>
-                    <p class="small">Název pořadu <span class="float-right">dd/mm/rr</span></p>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-                    <div class="item">
-                        <span class="time-badge">12:35</span>
-                        <img src="{{asset('/images/epizoda.png')}}" width="100%" class="border-rounded">
-                        <h5 class="mt-3 mb-1"><b>Název videa</b></h5>
-                    </div>
-                    <p class="small">Název pořadu <span class="float-right">dd/mm/rr</span></p>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-                    <div class="item">
-                        <span class="time-badge">21:01</span>
-                        <img src="{{asset('/images/epizoda.png')}}" width="100%" class="border-rounded">
-                        <h5 class="mt-3 mb-1"><b>Název videa</b></h5>
-                    </div>
-                    <p class="small">Název pořadu <span class="float-right">dd/mm/rr</span></p>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-                    <div class="item">
-                        <span class="time-badge">21:48</span>
-                        <img src="{{asset('/images/epizoda.png')}}" width="100%" class="border-rounded">
-                        <h5 class="mt-3 mb-1"><b>Název videa</b></h5>
-                    </div>
-                    <p class="small">Název pořadu <span class="float-right">dd/mm/rr</span></p>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-                    <div class="item">
-                        <span class="time-badge">21:48</span>
-                        <img src="{{asset('/images/epizoda.png')}}" width="100%" class="border-rounded">
-                        <h5 class="mt-3 mb-1"><b>Název videa</b></h5>
-                    </div>
-                    <p class="small">Název pořadu <span class="float-right">dd/mm/rr</span></p>
-                </div>
+                @php
+                    $e = null;
+                @endphp
+
+                @foreach($show_1_episodes as $e)
+                    @component('components.thumb', ['e' => $e])@endcomponent
+                @endforeach
             </div>
             <div class="row my-5">
                 <div class="col-12 mb-3">
-                    <h3 class="d-inline-block"><b>Jiří Dyčka</b></h3>
+                    <h3 class="d-inline-block"><b>{{$show_2->name}}</b></h3>
                     <a href="/porad" class="d-inline-block text-uppercase more font-weight-bold float-right">Ukázat vše
                         <i
                             class="fas fa-chevron-right"></i></a>
                 </div>
-                <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-                    <div class="item">
-                        <span class="time-badge">21:48</span>
-                        <span class="new-badge">Nové</span>
-                        <img src="{{asset('/images/epizoda.png')}}" width="100%" class="border-rounded">
-                        <h5 class="mt-3 mb-1"><b>Název videa</b></h5>
-                    </div>
-                    <p class="small">Název pořadu <span class="float-right">dd/mm/rr</span></p>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-                    <div class="item">
-                        <span class="time-badge">8:15</span>
-                        <img src="{{asset('/images/epizoda.png')}}" width="100%" class="border-rounded">
-                        <h5 class="mt-3 mb-1"><b>Název videa</b></h5>
-                    </div>
-                    <p class="small">Název pořadu <span class="float-right">dd/mm/rr</span></p>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-                    <div class="item">
-                        <span class="time-badge">12:35</span>
-                        <img src="{{asset('/images/epizoda.png')}}" width="100%" class="border-rounded">
-                        <h5 class="mt-3 mb-1"><b>Název videa</b></h5>
-                    </div>
-                    <p class="small">Název pořadu <span class="float-right">dd/mm/rr</span></p>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-                    <div class="item">
-                        <span class="time-badge">21:01</span>
-                        <img src="{{asset('/images/epizoda.png')}}" width="100%" class="border-rounded">
-                        <h5 class="mt-3 mb-1"><b>Název videa</b></h5>
-                    </div>
-                    <p class="small">Název pořadu <span class="float-right">dd/mm/rr</span></p>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-                    <div class="item">
-                        <span class="time-badge">21:48</span>
-                        <img src="{{asset('/images/epizoda.png')}}" width="100%" class="border-rounded">
-                        <h5 class="mt-3 mb-1"><b>Název videa</b></h5>
-                    </div>
-                    <p class="small">Název pořadu <span class="float-right">dd/mm/rr</span></p>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-                    <div class="item">
-                        <span class="time-badge">21:48</span>
-                        <img src="{{asset('/images/epizoda.png')}}" width="100%" class="border-rounded">
-                        <h5 class="mt-3 mb-1"><b>Název videa</b></h5>
-                    </div>
-                    <p class="small">Název pořadu <span class="float-right">dd/mm/rr</span></p>
-                </div>
+                @php
+                    $e = null;
+                @endphp
+
+                @foreach($show_2_episodes as $e)
+                    @component('components.thumb', ['e' => $e])@endcomponent
+                @endforeach
             </div>
         </div>
     </section>

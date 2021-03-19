@@ -5,6 +5,7 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Episode extends Model
 {
@@ -19,8 +20,16 @@ class Episode extends Model
 
     public function isLive()
     {
-        if ($this->is_livestream && $this->released_at->diffInSeconds(Carbon::now()) < $this->duration_seconds)
-        {
+        if (!$this->is_livestream) {
+            return false;
+        }
+
+        $seconds_since_release = $this->released_at->diffInSeconds(Carbon::now());
+        $livestream_in_progress = $seconds_since_release < $this->duration_seconds;
+
+        $livestream_released = $this->released_at <= Carbon::now();
+
+        if ($livestream_released && $livestream_in_progress) {
             return true;
         }
 
@@ -29,8 +38,7 @@ class Episode extends Model
 
     public function isNew()
     {
-        if ($this->released_at->diffInHours(Carbon::now()) < 24)
-        {
+        if ($this->released_at->diffInHours(Carbon::now(), false) < 168) {
             return true;
         }
 
@@ -50,8 +58,43 @@ class Episode extends Model
         return "https://img.youtube.com/vi/$code/mqdefault.jpg";
     }
 
+    public function getEmbedURL()
+    {
+        $url = $this->youtube_url;
+
+        $shortUrlRegex = '/youtu.be\/([a-zA-Z0-9_-]+)\??/i';
+        $longUrlRegex = '/youtube.com\/((?:embed)|(?:watch))((?:\?v\=)|(?:\/))([a-zA-Z0-9_-]+)/i';
+
+        if (preg_match($longUrlRegex, $url, $matches)) {
+            $youtube_id = $matches[count($matches) - 1];
+        }
+
+        if (preg_match($shortUrlRegex, $url, $matches)) {
+            $youtube_id = $matches[count($matches) - 1];
+        }
+
+        return 'https://www.youtube.com/embed/' . $youtube_id . '?autoplay=1';
+    }
+
     public function getDuration()
     {
-        return round($this->duration_seconds / 60) . ':' . $this->duration_seconds % 60;
+        if ($this->duration_seconds >= 3600) {
+            return gmdate("G:i:s", $this->duration_seconds);
+        } else {
+            return gmdate("i:s", $this->duration_seconds);
+        }
+    }
+
+    public function getPublicRoute()
+    {
+        return route('public.episode', [
+            'show_slug' => $this->show->getSlug(),
+            'episode_slug' => $this->getSlug()
+        ]);
+    }
+
+    private function getSlug()
+    {
+        return Str::slug($this->name);
     }
 }

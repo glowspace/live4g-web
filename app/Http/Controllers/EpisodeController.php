@@ -6,6 +6,7 @@ use App\Models\Episode;
 use App\Models\Show;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class EpisodeController extends Controller
 {
@@ -24,6 +25,7 @@ class EpisodeController extends Controller
 
         $episode = new Episode();
         $episode->name = $request['name'];
+        $episode->name_slug = Str::slug($request['name']);
         $episode->show_id = $show->id;
         $episode->description = $request['description'];
         $episode->duration_seconds = $this->countDurationFromDurationString($request['duration']);
@@ -39,6 +41,10 @@ class EpisodeController extends Controller
     {
         $arr = explode(':', $duration);
 
-        return $arr[0] * $arr[1];
+        if (count($arr) == 2) {
+            return $arr[0] * 60 + $arr[1];
+        } elseif (count($arr) == 3) {
+            return $arr[0] * 3600 + $arr[1] * 60 + $arr[2];
+        }
     }
 }
