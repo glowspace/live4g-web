@@ -17,11 +17,11 @@
 
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+{{--            <li class="nav-item my-auto">--}}
+{{--                <a class="nav-link" href="/">Kategorie</a>--}}
+{{--            </li>--}}
             <li class="nav-item my-auto">
-                <a class="nav-link" href="/">Kategorie</a>
-            </li>
-            <li class="nav-item my-auto">
-                <a class="nav-link" href="/porad">Pořady</a>
+                <a class="nav-link" href="/porady">Pořady</a>
             </li>
             <li class="nav-item my-auto">
                 <a class="nav-link" href="/">Živé vysílání</a>

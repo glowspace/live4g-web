@@ -18,4 +18,11 @@ class PublicShowController extends Controller
                 ->get(),
         ]);
     }
+
+    public function index()
+    {
+        return view('shows', [
+            'shows' => Show::orderBy('name')->get()
+        ]);
+    }
 }

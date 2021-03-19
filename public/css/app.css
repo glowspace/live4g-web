@@ -10183,3 +10183,11 @@ a:hover {
   color: black;
   text-decoration: none;
 }
+
+.btn {
+  text-transform: uppercase;
+}
+
+.btn-orange {
+  background-color: #ffd026 !important;
+}
