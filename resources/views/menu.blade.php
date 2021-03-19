@@ -30,7 +30,7 @@
         <form action="{{route('public.search')}}" method="GET">
             <div class="p-1 bg-light rounded rounded-pill shadow-sm my-lg-auto mb-3">
                 <div class="input-group">
-                    <input type="search" placeholder="Vyhledat..." class="form-control border-0 bg-transparent" name="q">
+                    <input type="search" placeholder="Vyhledat..." class="form-control border-0 bg-transparent" name="q" value="{{$search_query ? $search_query : ''}}">
                     <div class="input-group-append">
                         <button id="button-addon1" type="submit" class="btn btn-link text-primary">
                             <i class="fa fa-search"></i></button>
