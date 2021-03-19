@@ -15,7 +15,7 @@
                             @if($show->photoThumb)
                                 <img src="{{$show->photoThumb->size(400, 225)}}" width="100%">
                             @else
-                                <img src="{{asset('images/thumb_defult.jpg')}}" width="100%">
+                                <img src="{{asset('images/thumb_default.jpg')}}" width="100%">
                             @endif
                         </a>
                     </div>
