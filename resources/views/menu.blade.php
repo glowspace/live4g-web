@@ -46,7 +46,7 @@
 {{--                <a class="nav-link" href="https://www.youtube.com/channel/UCaQ72CWpjrBR1e5Ub6-Mqcg"><i class="fab fa-youtube"></i></a>--}}
 {{--            </li>--}}
             <li class="nav-item my-auto">
-                <a class="nav-link" href="https://www.instagram.com/live4gcz/?fbclid=IwAR2amkGS-7UW2-Yu46SlJPIvXNdC01B2dtWeNgIfcfguKroTLw-6fvqe8ag"><i class="fab fa-instagram"></i></a>
+                <a class="nav-link" href="https://www.instagram.com/live4gcz"><i class="fab fa-instagram"></i></a>
             </li>
 
 
