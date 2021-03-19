@@ -4,7 +4,7 @@
         {{--        <img src="{{asset('/images/slider.jpg')}}" width="100%" style="object-fit: cover; height: 45vh">--}}
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="5500">
             <div class="carousel-inner">
-                @foreach([$show_5, $show_1, $show_2, $show_3, $show_4] as $show)
+                @foreach([$show_3, $show_1, $show_2, $show_5, $show_4] as $show)
                 <div class="carousel-item {{$loop->first ? 'active' : ''}}">
                     <img src="{{$show->photoPanorama ? $show->photoPanorama->size(1920, 550) : asset('/images/slider.jpg')}}" width="100%" style="object-fit: cover; height: 50vh; filter: brightness(0.7)">
                     <div class="container-fluid px-5">
