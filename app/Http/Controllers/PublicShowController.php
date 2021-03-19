@@ -13,7 +13,9 @@ class PublicShowController extends Controller
 
         return view('show', [
             'show' => $show,
-            'show_episodes'=>$show->released_episodes()->get(),
+            'show_episodes'=>$show->released_episodes()
+                ->orderByDesc('released_at')
+                ->get(),
         ]);
     }
 }
