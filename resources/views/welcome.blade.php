@@ -11,7 +11,7 @@
                         <div class="carousel-caption vertical-center px-5" style="bottom: 50px!important;">
                             <h1><b>{{$show->name}}</b></h1>
                             <h4>{{$show->description_short}}</h4>
-                            <a href="{{$show->getLastEpisode()->getPublicRoute()}}" class="btn btn-orange mt-3">Sledovat pořad</a>
+                            <a href="{{$show->getLastEpisode()->getPublicRoute()}}" class="btn btn-orange mt-3">Sledovat online</a>
                         </div>
                     </div>
                 </div>
