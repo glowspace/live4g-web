@@ -19,31 +19,7 @@ class HomeController extends Controller
         $show_5 = Show::findOrFail(5);
 
         $last_episodes = Episode::where('released_at', '<=', Carbon::now())
-            ->orderByDesc('released_at')
-            ->limit(6)
-            ->get();
-
-        $show_1_episodes = $show_1->released_episodes()
-            ->orderByDesc('released_at')
-            ->limit(6)
-            ->get();
-
-        $show_2_episodes = $show_2->released_episodes()
-            ->orderByDesc('released_at')
-            ->limit(6)
-            ->get();
-
-        $show_3_episodes = $show_3->released_episodes()
-            ->orderByDesc('released_at')
-            ->limit(6)
-            ->get();
-
-        $show_4_episodes = $show_4->released_episodes()
-            ->orderByDesc('released_at')
-            ->limit(6)
-            ->get();
-
-        $show_5_episodes = $show_5->released_episodes()
+            ->where('show_id', '!=', 4)
             ->orderByDesc('released_at')
             ->limit(6)
             ->get();
@@ -52,19 +28,10 @@ class HomeController extends Controller
             'last_episodes' => $last_episodes,
 
             'show_1' => $show_1,
-            'show_1_episodes' => $show_1_episodes,
-
             'show_2' => $show_2,
-            'show_2_episodes' => $show_2_episodes,
-
             'show_3' => $show_3,
-            'show_3_episodes' => $show_3_episodes,
-
             'show_4' => $show_4,
-            'show_4_episodes' => $show_4_episodes,
-
             'show_5' => $show_5,
-            'show_5_episodes' => $show_5_episodes,
         ]);
     }
 }
