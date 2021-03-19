@@ -73,6 +73,11 @@ class ShowController extends Controller
             $show->photo_thumb = $photo->id;
         }
 
+        if ($request->hasFile('photo_panorama')) {
+            $photo = $ps->create($show->name_slug, $request->file('photo_panorama'));
+            $show->photo_panorama = $photo->id;
+        }
+
         $show->save();
 
         return redirect()->route('admin.shows.show', $show);

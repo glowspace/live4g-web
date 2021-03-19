@@ -27,12 +27,12 @@
             <div class="card-header">Média</div>
             <div class="card-body">
                 <div class="form-group">
-                    <label>Miniatura pořadu (16:9)</label>
+                    <label>Miniatura pořadu (velikost 400x225px)</label>
                     <input type="file" name="photo_thumb" class="form-control-file">
                 </div>
 
                 <div class="form-group">
-                    <label>Panorama pořadu (1920x550)</label>
+                    <label>Panorama pořadu (velikost 1920x550px)</label>
                     <input type="file" name="photo_panorama" class="form-control-file">
                     <br>
                     <small>Zobrazuje se u přehledu epizod</small>

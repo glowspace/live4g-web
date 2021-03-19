@@ -39,4 +39,9 @@ class Show extends Model
     {
         return $this->belongsTo(Photo::class, 'photo_thumb');
     }
+
+    public function photoPanorama()
+    {
+        return $this->belongsTo(Photo::class, 'photo_panorama');
+    }
 }
