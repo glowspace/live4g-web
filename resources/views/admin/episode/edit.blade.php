@@ -19,7 +19,7 @@
                 <div class="form-group">
                     <label>Datum a čas vydání</label>
                     <input class="form-control" type="datetime-local" required
-                           name="released_at" value="{{$episode->released_at->toDateTimeLocalString()}}">
+                           name="released_at" value="{{$episode->released_at->format('Y-m-d\TH:i')}}">
                     <small>Čas, kdy se epizoda zobrazí na webu.</small>
                 </div>
 
