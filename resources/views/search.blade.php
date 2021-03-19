@@ -14,7 +14,9 @@
                 @endforeach
 
                 @if(!$found_episodes->count())
-                    Žádné výsledky
+                    <div class="col-12">
+                    Nebyly nalezeny žádné výsledky.
+                    </div>
                 @endif
             </div>
         </div>
