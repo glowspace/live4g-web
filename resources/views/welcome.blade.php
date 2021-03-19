@@ -51,10 +51,11 @@
                     @component('components.thumb', ['e' => $e])@endcomponent
                 @endforeach
             </div>
+
             <div class="row my-5">
                 <div class="col-12 mb-3">
                     <h3 class="d-inline-block"><b>{{$show_2->name}}</b></h3>
-                    <a href="/porad" class="d-inline-block text-uppercase more font-weight-bold float-right">Ukázat vše
+                    <a href="{{$show_2->getPublicRoute()}}" class="d-inline-block text-uppercase more font-weight-bold float-right">Ukázat vše
                         <i
                             class="fas fa-chevron-right"></i></a>
                 </div>
@@ -63,6 +64,22 @@
                 @endphp
 
                 @foreach($show_2_episodes as $e)
+                    @component('components.thumb', ['e' => $e])@endcomponent
+                @endforeach
+            </div>
+
+            <div class="row my-5">
+                <div class="col-12 mb-3">
+                    <h3 class="d-inline-block"><b>{{$show_3->name}}</b></h3>
+                    <a href="{{$show_3->getPublicRoute()}}" class="d-inline-block text-uppercase more font-weight-bold float-right">Ukázat vše
+                        <i
+                            class="fas fa-chevron-right"></i></a>
+                </div>
+                @php
+                    $e = null;
+                @endphp
+
+                @foreach($show_3_episodes as $e)
                     @component('components.thumb', ['e' => $e])@endcomponent
                 @endforeach
             </div>

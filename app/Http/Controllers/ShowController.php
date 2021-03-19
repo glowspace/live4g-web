@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Show;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ShowController extends Controller
 {
@@ -24,6 +25,7 @@ class ShowController extends Controller
     {
         $show = new Show();
         $show->name = $request['name'];
+        $show->name_slug = Str::slug($request['name']);
         $show->save();
 
         return redirect()->route('admin.shows.show', $show);

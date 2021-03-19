@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
@@ -13,6 +14,13 @@ class Show extends Model
     public function episodes()
     {
         return $this->hasMany(Episode::class);
+    }
+
+    public function released_episodes()
+    {
+        return $this->episodes()
+            ->where('released_at', '<=', Carbon::now())
+            ->orderByDesc('released_at');
     }
 
     public function getSlug()
