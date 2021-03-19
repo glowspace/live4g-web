@@ -16,12 +16,6 @@
                     </div>
                 </div>
                 @endforeach
-                <div class="carousel-item">
-                    <img src="{{asset('/images/slider.jpg')}}" width="100%" style="object-fit: cover; height: 45vh">
-                </div>
-                <div class="carousel-item">
-                    <img src="{{asset('/images/slider.jpg')}}" width="100%" style="object-fit: cover; height: 45vh">
-                </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
