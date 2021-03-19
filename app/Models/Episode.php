@@ -88,8 +88,8 @@ class Episode extends Model
     public function getPublicRoute()
     {
         return route('public.episode', [
-            'show_slug' => $this->show->getSlug(),
-            'episode_slug' => $this->getSlug()
+            'show_slug' => $this->show->name_slug,
+            'episode_slug' => $this->name_slug
         ]);
     }
 
