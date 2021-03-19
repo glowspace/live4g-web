@@ -73,7 +73,7 @@ class Episode extends Model
             $youtube_id = $matches[count($matches) - 1];
         }
 
-        return 'https://www.youtube.com/embed/' . $youtube_id . '?autoplay=1';
+        return 'https://www.youtube.com/embed/' . $youtube_id . '?autoplay=1&rel=0';
     }
 
     public function getDuration()
