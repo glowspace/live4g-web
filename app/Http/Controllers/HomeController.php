@@ -22,14 +22,17 @@ class HomeController extends Controller
             ->get();
 
         $show_1_episodes = $show_1->released_episodes()
+            ->orderByDesc('released_at')
             ->limit(6)
             ->get();
 
         $show_2_episodes = $show_2->released_episodes()
+            ->orderByDesc('released_at')
             ->limit(6)
             ->get();
 
         $show_3_episodes = $show_3->released_episodes()
+            ->orderByDesc('released_at')
             ->limit(6)
             ->get();
 

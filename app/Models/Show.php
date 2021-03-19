@@ -19,8 +19,7 @@ class Show extends Model
     public function released_episodes()
     {
         return $this->episodes()
-            ->where('released_at', '<=', Carbon::now())
-            ->orderByDesc('released_at');
+            ->where('released_at', '<=', Carbon::now());
     }
 
     public function getSlug()

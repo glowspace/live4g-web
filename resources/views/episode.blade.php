@@ -14,66 +14,32 @@
                     </div>
                 </div>
                 <div class="col-4">
-                    <div class="row mb-2">
-                        <div class="col">
-                            <div class="item">
-                                <span class="time-badge">21:48</span>
-                                <span class="new-badge">Nové</span>
-                                <img src="{{asset('/images/epizoda.png')}}" width="100%" class="border-rounded">
+                    @foreach($recommended_episodes as $e)
+                        <a href="{{$e->getPublicRoute()}}">
+                            <div class="row mb-2">
+                                <div class="col">
+                                    <div class="item">
+                                        <span class="time-badge">{{$e->getDuration()}}</span>
+
+                                        @if($e->isLive())
+                                            <span class="live-badge"><i
+                                                    class="fas fa-circle text-danger blinking"></i> Živě</span>
+                                        @elseif($e->isNew())
+                                            <span class="new-badge">Nové</span>
+                                        @endif
+
+                                        <img src="{{$e->getPreviewURL()}}" width="100%" class="border-rounded">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <h5 class="mb-1"><b>{{$e->name}}</b></h5>
+                                    <p class="small">{{$e->show->name}}
+                                        <span class="float-right">{{$e->released_at->format('d/m/Y')}}</span></p>
+                                    <p class="description">{{$e->description}}</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col">
-                            <h5 class="mb-1"><b>Název videa</b></h5>
-                            <p class="small">Název pořadu <span class="float-right">dd/mm/rr</span></p>
-                            <p class="description">Kubo, já to na tebe prásknu!
-                                Může kněz porušit zpovědní tajemství? To by přišla exkomunikace!</p>
-                        </div>
-                    </div>
-                    <div class="row mb-2">
-                        <div class="col">
-                            <div class="item">
-                                <span class="time-badge">21:48</span>
-                                <span class="new-badge">Nové</span>
-                                <img src="{{asset('/images/epizoda.png')}}" width="100%" class="border-rounded">
-                            </div>
-                        </div>
-                        <div class="col">
-                            <h5 class="mb-1"><b>Název videa</b></h5>
-                            <p class="small">Název pořadu <span class="float-right">dd/mm/rr</span></p>
-                            <p class="description">Kubo, já to na tebe prásknu!
-                                Může kněz porušit zpovědní tajemství? To by přišla exkomunikace!</p>
-                        </div>
-                    </div>
-                    <div class="row mb-2">
-                        <div class="col">
-                            <div class="item">
-                                <span class="time-badge">21:48</span>
-                                <span class="new-badge">Nové</span>
-                                <img src="{{asset('/images/epizoda.png')}}" width="100%" class="border-rounded">
-                            </div>
-                        </div>
-                        <div class="col">
-                            <h5 class="mb-1"><b>Název videa</b></h5>
-                            <p class="small">Název pořadu <span class="float-right">dd/mm/rr</span></p>
-                            <p class="description">Kubo, já to na tebe prásknu!
-                                Může kněz porušit zpovědní tajemství? To by přišla exkomunikace!</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="item">
-                                <span class="time-badge">21:48</span>
-                                <span class="new-badge">Nové</span>
-                                <img src="{{asset('/images/epizoda.png')}}" width="100%" class="border-rounded">
-                            </div>
-                        </div>
-                        <div class="col">
-                            <h5 class="mb-1"><b>Název videa</b></h5>
-                            <p class="small">Název pořadu <span class="float-right">dd/mm/rr</span></p>
-                            <p class="description">Kubo, já to na tebe prásknu!
-                                Může kněz porušit zpovědní tajemství? To by přišla exkomunikace!</p>
-                        </div>
-                    </div>
+                        </a>
+                    @endforeach
                 </div>
             </div>
             <div class="row mt-4 mb-5">
