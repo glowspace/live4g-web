@@ -31,10 +31,31 @@ class EpisodeController extends Controller
         $episode->duration_seconds = $this->countDurationFromDurationString($request['duration']);
         $episode->is_livestream = $request->has('is_livestream');
         $episode->youtube_url = $request['youtube_url'];
-        $episode->released_at = Carbon::parse($request['released_at']);
+        $episode->released_at = Carbon::parse($request['released_at'])->format('Y-m-d H:i');
         $episode->save();
 
         return redirect()->route('admin.shows.show', $show);
+    }
+
+    public function edit(Episode $episode)
+    {
+        return view('admin.episode.edit', [
+            'episode' => $episode
+        ]);
+    }
+
+    public function update(Episode $episode, Request $request)
+    {
+        $episode->name = $request['name'];
+        $episode->name_slug = Str::slug($request['name']);
+        $episode->description = $request['description'];
+        $episode->duration_seconds = $this->countDurationFromDurationString($request['duration']);
+        $episode->is_livestream = $request->has('is_livestream');
+        $episode->youtube_url = $request['youtube_url'];
+        $episode->released_at = Carbon::parse($request['released_at'])->format('Y-m-d H:i');
+        $episode->save();
+
+        return redirect()->route('admin.shows.show', $episode->show_id);
     }
 
     private function countDurationFromDurationString($duration): int

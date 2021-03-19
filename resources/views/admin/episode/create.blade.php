@@ -20,7 +20,7 @@
                 <div class="form-group">
                     <label>Datum a čas vydání</label>
                     <input class="form-control" type="datetime-local" required
-                           name="released_at" value="{{\Carbon\Carbon::now()}}">
+                           name="released_at" value="{{\Carbon\Carbon::now()->addDay()->startOfMinute()->toDateTimeLocalString()}}">
                     <small>Čas, kdy se epizoda zobrazí na webu.</small>
                 </div>
 

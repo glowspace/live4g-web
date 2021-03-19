@@ -18,9 +18,9 @@
         @foreach($scheduled_episodes as $scheduled_episode)
             <tr>
                 <td>
-                    <a href="">{{$scheduled_episode->name}}</a>
+                    <a href="{{route('admin.episodes.edit', $scheduled_episode)}}">{{$scheduled_episode->name}}</a>
                 </td>
-                <td>{{$scheduled_episode->released_at->format('d.m.Y h:i')}}</td>
+                <td>{{$scheduled_episode->released_at->format('d.m.Y G:i')}}</td>
             </tr>
         @endforeach
     </table>
@@ -33,9 +33,9 @@
         @foreach($released_episodes as $released_episode)
             <tr>
                 <td>
-                    <a>{{$released_episode->name}}</a>
+                    <a href="{{route('admin.episodes.edit', $released_episode)}}">{{$released_episode->name}}</a>
                 </td>
-                <td>{{$released_episode->released_at->format('d.m.Y h:i')}}</td>
+                <td>{{$released_episode->released_at->format('d.m.Y G:i')}}</td>
             </tr>
         @endforeach
     </table>
