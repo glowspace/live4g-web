@@ -34,6 +34,7 @@ class PublicEpisodeController extends Controller
 
             $last_episodes = Episode::where('released_at', '<=', Carbon::now())
                 ->where('show_id', '!=', $episode->show_id)
+                ->where('show_id', '!=', 4)
                 ->orderByDesc('released_at')
                 ->limit($needed)
                 ->get();
