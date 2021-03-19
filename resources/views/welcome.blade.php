@@ -2,7 +2,7 @@
 @section('content')
     <section>
         {{--        <img src="{{asset('/images/slider.jpg')}}" width="100%" style="object-fit: cover; height: 45vh">--}}
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="3500">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="5500">
             <div class="carousel-inner">
                 @foreach([$show_1, $show_2, $show_3, $show_4] as $show)
                 <div class="carousel-item {{$loop->first ? 'active' : ''}}">
