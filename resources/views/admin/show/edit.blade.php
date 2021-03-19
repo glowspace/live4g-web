@@ -3,7 +3,7 @@
     <h3>Úprava pořadu {{$show->name}}</h3>
 
     <form method="POST"
-          action="{{route('admin.shows.update', $show)}}">
+          action="{{route('admin.shows.update', $show)}}" enctype="multipart/form-data">
         @csrf
         @method('PATCH')
 
@@ -22,6 +22,24 @@
             <label>Dlouhý popis</label>
             <textarea class="form-control" name="description_long" rows="10">{{$show->description_long}}</textarea>
         </div>
+
+        <div class="card">
+            <div class="card-header">Média</div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label>Miniatura pořadu (16:9)</label>
+                    <input type="file" name="photo_thumb" class="form-control-file">
+                </div>
+
+                <div class="form-group">
+                    <label>Panorama pořadu (1920x550)</label>
+                    <input type="file" name="photo_panorama" class="form-control-file">
+                    <br>
+                    <small>Zobrazuje se u přehledu epizod</small>
+                </div>
+            </div>
+        </div>
+
 
         <input type="submit"
                class="btn btn btn-success" value="Uložit pořad">

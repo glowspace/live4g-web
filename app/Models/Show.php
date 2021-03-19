@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use MichaelDojcar\LaravelPhoto\Models\Photo;
 
 class Show extends Model
 {
@@ -32,5 +33,10 @@ class Show extends Model
         return route('public.show', [
             'show_slug' => $this->name_slug,
         ]);
+    }
+
+    public function photoThumb()
+    {
+        return $this->belongsTo(Photo::class, 'photo_thumb');
     }
 }

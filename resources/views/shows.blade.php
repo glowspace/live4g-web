@@ -12,7 +12,11 @@
                 <div class="row">
                     <div class="col-3 my-3">
                         <a href="{{$show->getPublicRoute()}}">
-                            <img src="{{asset('/images/slider.jpg')}}" width="100%" height="180px">
+                            @if($show->photoThumb)
+                                <img src="{{$show->photoThumb->size(400, 225)}}" width="100%">
+                            @else
+                                <img src="{{asset('images/thumb_defult.jpg')}}" width="100%">
+                            @endif
                         </a>
                     </div>
                     <div class="col-9 my-3">

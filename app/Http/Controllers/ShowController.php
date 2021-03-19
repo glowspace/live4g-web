@@ -6,6 +6,7 @@ use App\Models\Show;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use MichaelDojcar\LaravelPhoto\PhotoService;
 
 class ShowController extends Controller
 {
@@ -63,6 +64,15 @@ class ShowController extends Controller
         $show->name = $request['name'];
         $show->description_short = $request['description_short'];
         $show->description_long = $request['description_long'];
+
+        $ps = new PhotoService();
+
+        // Files
+        if ($request->hasFile('photo_thumb')) {
+            $photo = $ps->create($show->name_slug, $request->file('photo_thumb'));
+            $show->photo_thumb = $photo->id;
+        }
+
         $show->save();
 
         return redirect()->route('admin.shows.show', $show);
