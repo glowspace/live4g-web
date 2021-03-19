@@ -38,6 +38,7 @@ Route::group([
 Route::get('/', [HomeController::class, 'home']);
 
 Route::get('/porady', [PublicShowController::class, 'index']);
+Route::get('/vyhledavani', [PublicShowController::class, 'search'])->name('public.search');
 
 Route::get('/{show_slug}', [PublicShowController::class, 'show'])->name('public.show');
 Route::get('/{show_slug}/{episode_slug}', [PublicEpisodeController::class, 'episode'])->name('public.episode');
