@@ -23,6 +23,13 @@ class Show extends Model
             ->where('released_at', '<=', Carbon::now());
     }
 
+    public function getLastEpisode(): Episode
+    {
+        return $this->released_episodes()
+            ->orderByDesc('released_at')
+            ->firstOrFail();
+    }
+
     public function getSlug()
     {
         return Str::slug($this->name);

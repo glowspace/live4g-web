@@ -4,19 +4,18 @@
         {{--        <img src="{{asset('/images/slider.jpg')}}" width="100%" style="object-fit: cover; height: 45vh">--}}
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="3500">
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="{{asset('/images/slider.jpg')}}" width="100%" style="object-fit: cover; height: 45vh">
+                @foreach([$show_1, $show_2, $show_3, $show_4] as $show)
+                <div class="carousel-item {{$loop->first ? 'active' : ''}}">
+                    <img src="{{$show->photoPanorama ? $show->photoPanorama->size(1920, 550) : asset('/images/slider.jpg')}}" width="100%" style="object-fit: cover; height: 50vh; filter: brightness(0.7)">
                     <div class="container-fluid px-5">
                         <div class="carousel-caption vertical-center px-5" style="bottom: 50px!important;">
-                            <h1><b>Název</b></h1>
-                            <h4>Neznáš Boha, nebo jsi už dlouho nezakusil, že je živý a skutečně jedná? My jsme to
-                                zažili a nechceme si to nechat pro sebe. Naší touhou je zprostředkovat ti zkušenost s
-                                živým Bohem a nabídnout ti prostor pozvat ho do svého života, když budeš chtít. Na
-                                vlastní kůži jsme se přesvědčili o tom, že to stojí za to.</h4>
-                            <a href="" class="btn btn-orange mt-3">Přehrát epizodu</a>
+                            <h1><b>{{$show->name}}</b></h1>
+                            <h4>{{$show->description_short}}</h4>
+                            <a href="{{$show->getLastEpisode()->getPublicRoute()}}" class="btn btn-orange mt-3">Sledovat pořad</a>
                         </div>
                     </div>
                 </div>
+                @endforeach
                 <div class="carousel-item">
                     <img src="{{asset('/images/slider.jpg')}}" width="100%" style="object-fit: cover; height: 45vh">
                 </div>
