@@ -11,7 +11,6 @@
             <div class="col-lg-3 col-12">
                 <h5><b>O nás</b></h5>
                 <a>O Live4G</a><br>
-                <a>Body k zamyšlení</a><br>
                 <a>Kontakt</a>
             </div>
         </div>

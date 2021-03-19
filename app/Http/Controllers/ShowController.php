@@ -51,14 +51,21 @@ class ShowController extends Controller
         ]);
     }
 
-    public function edit()
+    public function edit(Show $show)
     {
-
+        return view('admin.show.edit', [
+            'show' => $show
+        ]);
     }
 
-    public function update()
+    public function update(Show $show, Request $request)
     {
+        $show->name = $request['name'];
+        $show->description_short = $request['description_short'];
+        $show->description_long = $request['description_long'];
+        $show->save();
 
+        return redirect()->route('admin.shows.show', $show);
     }
 
     public function destroy()

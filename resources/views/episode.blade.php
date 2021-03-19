@@ -51,6 +51,7 @@
 
                     <h3>O pořadu</h3>
                     <h5 class="font-weight-light">{{$episode->show->description_short}}</h5>
+                    <a href="{{$episode->show->getPublicRoute()}}" class="btn btn-orange mt-2">Všechny epizody</a>
                 </div>
             </div>
         </div>

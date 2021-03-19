@@ -3,7 +3,7 @@
 
     <h3 class="d-inline-block">Pořad {{$show->name}}</h3>
 
-    <a class="btn btn-secondary btn-sm float-right">Upravit pořad</a>
+    <a class="btn btn-secondary btn-sm float-right" href="{{route('admin.shows.edit', $show)}}">Upravit pořad</a>
 
     <hr>
 

@@ -30,7 +30,7 @@ class Show extends Model
     public function getPublicRoute()
     {
         return route('public.show', [
-            'show_slug' => $this->getSlug(),
+            'show_slug' => $this->name_slug,
         ]);
     }
 }

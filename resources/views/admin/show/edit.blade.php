@@ -1,39 +1,33 @@
-@extends('admin.layout')
+@extends('admin::layout')
 @section('content')
-    <h3>Úprava místa</h3>
+    <h3>Úprava pořadu {{$show->name}}</h3>
 
     <form method="POST"
-          action="{{route('admin.episodes.update', $episode)}}">
+          action="{{route('admin.shows.update', $show)}}">
         @csrf
         @method('PATCH')
 
         <div class="form-group">
-            <label>Název epizody</label>
+            <label>Název pořadu</label>
             <input class="form-control" required
-                   name="name" value="{{$episode->name}}">
+                   name="name" value="{{$show->name}}">
         </div>
 
         <div class="form-group">
-            <label>Číslo epizody</label>
-            <input name="number" class="form-control" type="number" required value="{{$episode->number}}">
-            <small>podle něj se skládá pořadí</small>
+            <label>Krátký popis</label>
+            <textarea class="form-control" name="description_short">{{$show->description_short}}</textarea>
         </div>
 
         <div class="form-group">
-            <label>Odkaz videa na YouTube</label>
-            <input name="url" required type="url" class="form-control" value="{{$episode->url}}">
-        </div>
-
-        <div class="form-group">
-            <label>Popis u videa</label>
-            <input name="description" required type="text" class="form-control" value="{{$episode->description}}">
+            <label>Dlouhý popis</label>
+            <textarea class="form-control" name="description_long" rows="10">{{$show->description_long}}</textarea>
         </div>
 
         <input type="submit"
-               class="btn btn btn-success">
+               class="btn btn btn-success" value="Uložit pořad">
 
-        <a href="{{route('admin.episodes.index')}}"
-           class="btn btn-secondary">Zrušit změny</a>
+        <a href="{{route('admin.shows.index')}}"
+           class="btn btn-secondary">Zrušit</a>
     </form>
 
 @endsection
