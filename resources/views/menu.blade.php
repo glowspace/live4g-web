@@ -5,7 +5,7 @@
 </nav>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-black px-lg-5 px-2 shadow" style="z-index: 11">
-    <a class="navbar-brand" href="/"><img src="{{asset('/images/live4g-white.png')}}" height="50px"></a>
+    <a class="navbar-brand mb-lg-0" href="/"><img src="{{asset('/images/live4g-white.png')}}" height="50px"></a>
     <button class="navbar-toggler"
             type="button"
             data-toggle="collapse"
@@ -43,7 +43,7 @@
                 </div>
             </div>
         </form>
-        <ul class="navbar-nav mr-0 mt-2 mt-lg-0 socials">
+        <ul class="navbar-nav mr-0 mt-2 mt-lg-0 socials d-lg-flex d-none">
             <li class="nav-item my-auto">
                 <a class="nav-link" href="https://www.facebook.com/live4gcz"><i class="fab fa-facebook"></i></a>
             </li>

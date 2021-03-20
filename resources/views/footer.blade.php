@@ -1,5 +1,5 @@
 <section class="bg-black" id="footer">
-    <div class="container-fluid px-5 py-5">
+    <div class="container-fluid px-md-5 py-5">
         <div class="row">
             <div class="col-lg-3 col-12">
                 <h5><b>Pořady</b></h5>
@@ -8,7 +8,7 @@
                 <a>Hřešíme s Kubou</a><br>
                 <a>Jiří Dyčka</a>
             </div>
-            <div class="col-lg-3 col-12">
+            <div class="col-lg-3 col-12 mt-lg-0 mt-4">
                 <h5><b>O nás</b></h5>
                 <a>O Live4G</a><br>
                 <a>Kontakt</a>

@@ -4,7 +4,7 @@
         @if($show->photoPanorama)
             <img src="{{$show->photoPanorama->size(1920, 550)}}"
                  width="100%"
-                 style="object-fit: cover; height: 55vh; filter: brightness(0.7);   object-position: 80%">
+                 style="object-fit: cover; height: 55vh; filter: brightness(0.7);   object-position: 70%">
         @else
             <img src="{{asset('/images/slider.jpg')}}"
                  width="100%"
@@ -18,7 +18,7 @@
         </div>
     </section>
 
-    <nav class="navbar navbar-expand navbar-light bg-light px-5">
+    <nav class="navbar navbar-expand navbar-light bg-light px-md-5 ">
         {{--        <button class="navbar-toggler"--}}
         {{--                type="button"--}}
         {{--                data-toggle="collapse"--}}
@@ -35,7 +35,7 @@
             {{--                    <a class="nav-link ml-0" href="/">Všechna videa</a>--}}
             {{--                </li>--}}
             <li class="nav-item">
-                <a class="nav-link" href="#epizody">Epizody</a>
+                <a class="nav-link ml-0 pl-0" href="#epizody">Epizody</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#o-poradu">O pořadu</a>
@@ -65,9 +65,9 @@
 
 
                     @if($show->description_long)
-                        <div class="col-8" style="white-space: pre-wrap;">{!! $show->description_long !!}</div>
+                        <div class="col-md-8 col-12" style="white-space: pre-wrap;">{!! $show->description_long !!}</div>
                     @else
-                        <div class="col-8" style="white-space: pre-wrap;">{!! $show->description_short !!}</div>
+                        <div class="col-md-8 col-12" style="white-space: pre-wrap;">{!! $show->description_short !!}</div>
                     @endif
                     {{--                    <div class="col-4">--}}
                     {{--                        @if($show->photoThumb)--}}

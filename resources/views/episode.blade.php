@@ -19,12 +19,13 @@
                         <hr>
                         <h5 class="font-weight-light mb-3">{{$episode->description}}</h5>
                     </div>
-
-                    <h3 class="mt-4">O pořadu</h3>
-                    <h5 class="font-weight-light">{{$episode->show->description_short}}</h5>
-                    <a href="{{$episode->show->getPublicRoute()}}" class="btn btn-orange mt-2">Všechny epizody</a>
+                    <div class="d-md-block d-none">
+                        <h3 class="mt-4">O pořadu</h3>
+                        <h5 class="font-weight-light">{{$episode->show->description_short}}</h5>
+                        <a href="{{$episode->show->getPublicRoute()}}" class="btn btn-orange mt-2">Všechny epizody</a>
+                    </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 mt-md-0 mt-4">
                     @foreach($recommended_episodes as $e)
                         <a href="{{$e->getPublicRoute()}}">
                             <div class="row mb-3">
@@ -51,6 +52,12 @@
                             </div>
                         </a>
                     @endforeach
+                    <div class="d-md-none d-block my-4">
+                        <hr>
+                        <h3 class="mt-4">O pořadu</h3>
+                        <h5 class="font-weight-light">{{$episode->show->description_short}}</h5>
+                        <a href="{{$episode->show->getPublicRoute()}}" class="btn btn-orange mt-2">Všechny epizody</a>
+                    </div>
                     <div class="card border-0 bg-light mt-0 py-3 my-4"
                          style="box-shadow: 0 2px 18px 0 rgb(0 0 0 / 15%)">
                         <div class="card-content">
