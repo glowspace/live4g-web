@@ -36,6 +36,7 @@ Route::group([
  * Public routes.
  */
 Route::get('/', [HomeController::class, 'home']);
+Route::get('/podporte-nas', [HomeController::class, 'support']);
 
 Route::get('/porady', [PublicShowController::class, 'index']);
 Route::get('/vyhledavani', [PublicShowController::class, 'search'])->name('public.search');

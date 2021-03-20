@@ -4,7 +4,7 @@
         @if($show->photoPanorama)
             <img src="{{$show->photoPanorama->size(1920, 550)}}"
                  width="100%"
-                 style="object-fit: cover; height: 55vh; filter: brightness(0.7)">
+                 style="object-fit: cover; height: 55vh; filter: brightness(0.7);   object-position: 80%">
         @else
             <img src="{{asset('/images/slider.jpg')}}"
                  width="100%"
@@ -18,30 +18,30 @@
         </div>
     </section>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light px-5">
-        <button class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarTogglerDemo02"
-                aria-controls="navbarTogglerDemo02"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <nav class="navbar navbar-expand navbar-light bg-light px-5">
+        {{--        <button class="navbar-toggler"--}}
+        {{--                type="button"--}}
+        {{--                data-toggle="collapse"--}}
+        {{--                data-target="#navbarTogglerDemo02"--}}
+        {{--                aria-controls="navbarTogglerDemo02"--}}
+        {{--                aria-expanded="false"--}}
+        {{--                aria-label="Toggle navigation">--}}
+        {{--            <span class="navbar-toggler-icon"></span>--}}
+        {{--        </button>--}}
 
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                {{--                <li class="nav-item">--}}
-                {{--                    <a class="nav-link ml-0" href="/">Všechna videa</a>--}}
-                {{--                </li>--}}
-                <li class="nav-item">
-                    <a class="nav-link" href="#epizody">Epizody</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#o-poradu">O pořadu</a>
-                </li>
-            </ul>
-        </div>
+        {{--        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">--}}
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            {{--                <li class="nav-item">--}}
+            {{--                    <a class="nav-link ml-0" href="/">Všechna videa</a>--}}
+            {{--                </li>--}}
+            <li class="nav-item">
+                <a class="nav-link" href="#epizody">Epizody</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#o-poradu">O pořadu</a>
+            </li>
+        </ul>
+        {{--        </div>--}}
 
     </nav>
 
@@ -69,11 +69,11 @@
                     @else
                         <div class="col-8" style="white-space: pre-wrap;">{!! $show->description_short !!}</div>
                     @endif
-{{--                    <div class="col-4">--}}
-{{--                        @if($show->photoThumb)--}}
-{{--                            <img src="{{$show->photoThumb->size(400, 225)}}">--}}
-{{--                        @endif--}}
-{{--                    </div>--}}
+                    {{--                    <div class="col-4">--}}
+                    {{--                        @if($show->photoThumb)--}}
+                    {{--                            <img src="{{$show->photoThumb->size(400, 225)}}">--}}
+                    {{--                        @endif--}}
+                    {{--                    </div>--}}
 
                 </div>
             @endif

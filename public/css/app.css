@@ -10047,17 +10047,40 @@ body {
 
 .carousel-caption {
   bottom: 35%;
-  padding-bottom: 0px;
+  padding-bottom: 0;
   text-align: left;
   right: 3rem !important;
   left: 3rem !important;
   width: 55%;
+}
+@media (max-width: 576px) {
+  .carousel-caption {
+    right: 1rem !important;
+    left: 1rem !important;
+  }
+}
+@media (max-width: 370px) {
+  .carousel-caption {
+    bottom: 27% !important;
+  }
 }
 .carousel-caption h1 {
   color: white;
   font-style: normal;
   font-size: 3rem;
   line-height: 2em;
+}
+@media (max-width: 768px) {
+  .carousel-caption h1 {
+    font-size: 2rem;
+    line-height: 2rem;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 576px) {
+  .carousel-caption h4 {
+    font-size: 1rem;
+  }
 }
 
 .form-control:focus {
@@ -10073,7 +10096,7 @@ body {
 
 .item {
   position: relative;
-  display: inline-block;
+  display: block;
 }
 
 .time-badge {

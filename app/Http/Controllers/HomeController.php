@@ -34,4 +34,9 @@ class HomeController extends Controller
             'show_5' => $show_5,
         ]);
     }
+
+    public function support()
+    {
+        return view('support');
+    }
 }

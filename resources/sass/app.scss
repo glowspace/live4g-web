@@ -58,19 +58,38 @@ body {
 //Show
 .carousel-caption {
     bottom: 35%;
-    padding-bottom: 0px;
+    padding-bottom: 0;
     text-align: left;
     right: 3rem !important;
     left: 3rem !important;
     width: 55%;
 
+    @media (max-width: 576px) {
+        right: 1rem !important;
+        left: 1rem !important;
+    }
+    @media (max-width: 370px) {
+        bottom: 27% !important;
+
+    }
+
     h1 {
         color: white;
         font-style: normal;
         font-size: 3rem;
-        //text-transform: uppercase;
-        //padding-top: 16%;
         line-height: 2em;
+
+        @media (max-width: 768px) {
+            font-size: 2rem;
+            line-height: 2rem;
+            margin-bottom: 10px;
+        }
+    }
+
+    h4 {
+        @media (max-width: 576px) {
+            font-size: 1rem;
+        }
     }
 }
 
@@ -94,7 +113,8 @@ body {
 
 .item {
     position: relative;
-    display: inline-block;
+    display: block;
+    //display: inline-block;
 }
 
 .time-badge {
