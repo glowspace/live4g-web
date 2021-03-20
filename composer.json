@@ -17,7 +17,8 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.2",
         "michaeldojcar/laravel-admin": "^0.1.1",
-        "michaeldojcar/laravel-photo": "dev-master"
+        "michaeldojcar/laravel-photo": "dev-master",
+        "ext-mbstring": "*"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.7",

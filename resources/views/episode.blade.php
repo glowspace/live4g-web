@@ -42,7 +42,7 @@
                                     <h5 class="mb-1"><b>{{$e->name}}</b></h5>
                                     <p class="small">{{$e->show->name}}
                                         <span class="float-right">{{$e->released_at->format('d/m/Y')}}</span></p>
-                                    <p class="description">{{$e->description}}</p>
+                                    <p class="description">{{\Illuminate\Support\Str::limit($e->description, 110, '...')}}</p>
                                 </div>
                             </div>
                         </a>
