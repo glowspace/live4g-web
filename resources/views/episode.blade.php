@@ -23,8 +23,8 @@
                 <div class="col-md-4">
                     @foreach($recommended_episodes as $e)
                         <a href="{{$e->getPublicRoute()}}">
-                            <div class="row mb-2">
-                                <div class="col">
+                            <div class="row mb-3">
+                                <div class="col pr-1">
                                     <div class="item">
                                         <span class="time-badge">{{$e->getDuration()}}</span>
 
@@ -42,7 +42,7 @@
                                     <h5 class="mb-1"><b>{{$e->name}}</b></h5>
                                     <p class="small">{{$e->show->name}}
                                         <span class="float-right">{{$e->released_at->format('d/m/Y')}}</span></p>
-                                    <p class="description">{{\Illuminate\Support\Str::limit($e->description, 110, '...')}}</p>
+                                    <p class="description mb-0">{{\Illuminate\Support\Str::limit($e->description, 110, '...')}}</p>
                                 </div>
                             </div>
                         </a>
