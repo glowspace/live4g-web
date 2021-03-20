@@ -1,10 +1,10 @@
 @extends('layout')
 @section('content')
     <section>
-        <div class="container-fluid px-5 my-5">
+        <div class="container-fluid px-md-5 my-md-5">
             <div class="row">
-                <div class="col-8">
-                    <div class="embed-responsive embed-responsive-16by9">
+                <div class="col-md-8 px-0 px-md-3">
+                    <div class="embed-responsive embed-responsive-16by9 mb-3 mb-md-4">
                         <iframe class="embed-responsive-item" width="100%"
                                 height="auto"
                                 src="{{$episode->getEmbedURL()}}"
@@ -12,8 +12,15 @@
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe>
                     </div>
+
+                    <div class="px-3 px-md-0 mb-3">
+                        <h3><b>{{$episode->name}} | {{$episode->show->name}}</b></h3>
+                        <p class="text-secondary">Publikováno: {{$episode->released_at->format('j.n.Y')}}</p>
+                        <hr>
+                        <h5 class="font-weight-light mb-3">{{$episode->description}}</h5>
+                    </div>
                 </div>
-                <div class="col-4">
+                <div class="col-md-4">
                     @foreach($recommended_episodes as $e)
                         <a href="{{$e->getPublicRoute()}}">
                             <div class="row mb-2">
@@ -43,12 +50,7 @@
                 </div>
             </div>
             <div class="row mt-4 mb-5">
-                <div class="col-8">
-                    <h3><b>{{$episode->name}} | {{$episode->show->name}}</b></h3>
-                    <p class="text-secondary">Publikováno: {{$episode->released_at->format('j.n.Y')}}</p>
-                    <hr>
-                    <h5 class="font-weight-light mb-5">{{$episode->description}}</h5>
-
+                <div class="col-md-8">
                     <h3>O pořadu</h3>
                     <h5 class="font-weight-light">{{$episode->show->description_short}}</h5>
                     <a href="{{$episode->show->getPublicRoute()}}" class="btn btn-orange mt-2">Všechny epizody</a>

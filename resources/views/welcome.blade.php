@@ -1,6 +1,6 @@
 @extends('layout')
 @section('content')
-    <section>
+    <section class="d-none d-md-block">
         {{--        <img src="{{asset('/images/slider.jpg')}}" width="100%" style="object-fit: cover; height: 45vh">--}}
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="5500">
             <div class="carousel-inner">
